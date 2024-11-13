@@ -8,29 +8,29 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-// Get All Resource
+// dapatkan semua data employee
 Route::get('/employees', [EmployeeController::class, 'index']);
 
-// Add Resource
+// tambahkan data employee
 Route::post('/employees', [EmployeeController::class, 'store']);
 
-// Get Detail Resource
+// dapatkan detail employee
 Route::get('/employees/{id}', [EmployeeController::class, 'show']);
 
-// Edit Resource
+// edit data employee
 Route::put('/employees/{id}', [EmployeeController::class, 'update']);
 
-// Delete Resource
+// hapus data employee
 Route::delete('/employees/{id}', [EmployeeController::class, 'destroy']);
 
-// Search Resource by Name
+// cari data berdasarkan nama employee
 Route::get('/employees/search/{name}', [EmployeeController::class, 'search']);
 
-// Get Active Resource
+// dapatkan data epmloyee yang aktif
 Route::get('/employees/status/active', [EmployeeController::class, 'active']);
 
-// Get Inactive Resource
+// dapatkan data epmloyee yang tidka aktif
 Route::get('/employees/status/inactive', [EmployeeController::class, 'inactive']);
 
-// Get Terminated Resource
+// dapatkan data epmloyee yang terminated(dipecat)
 Route::get('/employees/status/terminated', [EmployeeController::class, 'terminated']);

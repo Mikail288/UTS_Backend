@@ -14,13 +14,13 @@ class EmployeeController extends Controller
         if ($employees->isEmpty()) {
             return response()->json([
                 'message' => 'Data is empty',
-            ], 200); // kode status 200 berhasil
+            ], 404); // kode status 404 tidak ditemkukan
         }
 
         return response()->json([
             'message' => 'Get All Resource',
             'data' => $employees,
-        ], 200);
+        ], 200); //kode status 200 berhasil
     }
 
     // tambahkan data employee
