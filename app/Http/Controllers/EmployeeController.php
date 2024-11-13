@@ -10,7 +10,7 @@ class EmployeeController extends Controller
     public function index()
     {
         $employees = Employee::all();
-
+        //jika data kosong return status 404
         if ($employees->isEmpty()) {
             return response()->json([
                 'message' => 'Data is empty',
@@ -48,7 +48,7 @@ class EmployeeController extends Controller
     public function show($id)
     {
         $employee = Employee::find($id);
-
+        //jika data kosong return status 404
         if (!$employee) {
             return response()->json([
                 'message' => 'Resource not found',
@@ -65,7 +65,7 @@ class EmployeeController extends Controller
     public function update(Request $request, $id)
     {
         $employee = Employee::find($id);
-
+        //jika data kosong return status 404
         if (!$employee) {
             return response()->json([
                 'message' => 'Resource not found',
@@ -84,7 +84,7 @@ class EmployeeController extends Controller
     public function destroy($id)
     {
         $employee = Employee::find($id);
-
+        //jika data kosong return status 404
         if (!$employee) {
             return response()->json([
                 'message' => 'Resource not found',
@@ -102,7 +102,7 @@ class EmployeeController extends Controller
     public function search($name)
     {
         $employees = Employee::where('name', 'like', '%' . $name . '%')->get();
-
+        //jika data kosong return status 404
         if ($employees->isEmpty()) {
             return response()->json([
                 'message' => 'Resource not found',
