@@ -8,7 +8,7 @@ class Employee extends Model
 {
     //nama table
     protected $table = 'employees';
-    //data yang bisa di isi
+    //data yang bisa diisi
     protected $fillable = [
         'name', 
         'gender', 
